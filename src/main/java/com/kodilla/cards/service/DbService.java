@@ -17,7 +17,7 @@ public class DbService {
         return cardsRepository.findById(taskId);
     }
 
-    public List<Cards> getAllCardsByCustomerId(final Long customerId){
+    public List<Cards> getAllCardsByCustomerId(final Long customerId) {
         return cardsRepository.findAllByCustomerId(customerId);
     }
 }
