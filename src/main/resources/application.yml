@@ -1,0 +1,38 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: cards
+  profiles:
+    active: production
+  datasource:
+    url: ${cards.datasource.url}
+    username: ${cards.datasource.username}
+    password: ${cards.datasource.password}
+  jpa:
+    database: ${cards.jpa.database}
+    show-sql: ${cards.jpa.show-sql}
+    hibernate:
+      ddl-auto: ${cards.jpa.hibernate.ddl-auto}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+info:
+  app:
+    name: "Cards"
+    version: "0.0.1"
+    profile: ${spring.profiles.active}
+  serverInfo:
+    port: ${server.port}
+
+eureka:
+  client: ${eureka-client}
+
+application:
+  allow-get-cards: ${cards.allow-get-cards}
+
+
